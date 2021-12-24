@@ -23,7 +23,7 @@
             <strong>Send Whatsapp MSG to Number</strong>
             </h5>
             <div class="card-body px-lg-5 pt-0">
-                <form class="text-center" style="color: #757575;">
+                <form class="text-center" id="msgwa" style="color: #757575;">
                     <div class="md-form">
                         <input type="email" id="number" class="form-control" placeholder="Enter Number to Whatsapp">
                     </div>
@@ -35,7 +35,8 @@
     <script src="js/jquery-3.js"></script>
     <script> 
         function redirectToWA(){
-            window.location.replace("https://api.whatsapp.com/send?phone=");
+            var number = document.getElementById('msgwa').elements['number'].value;
+            window.location.replace("https://api.whatsapp.com/send?phone=${number}");
         }
     </script>
 
